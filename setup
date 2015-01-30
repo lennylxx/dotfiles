@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for dotfile in `ls -a | grep "^\.[a-z]" | cut -d\/ -f1 | grep -v "^\.git$" | grep -v "^\.gitignore$"`;
+do
+    ln -s -i $PWD/$dotfile ~
+done
+
