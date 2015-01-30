@@ -81,8 +81,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias tmux="tmux -2"
 
-if [[ -r /lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source /lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

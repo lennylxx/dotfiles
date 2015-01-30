@@ -1,4 +1,4 @@
-set rtp+=/lib/python2.7/site-packages/powerline/bindings/vim/
+set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set rtp+=~/.fzf
 set nocompatible
 set colorcolumn=80
