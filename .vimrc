@@ -18,3 +18,4 @@ set number
 "set undofile
 "set wrap
 
+set showtabline=2
