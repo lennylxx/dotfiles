@@ -5,3 +5,6 @@ do
     ln -s -i $PWD/$dotfile ~
 done
 
+# vim
+ln -s -i $PWD/vim/colors ~/.vim/colors
+
