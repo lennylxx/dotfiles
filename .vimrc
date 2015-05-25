@@ -23,7 +23,7 @@ set number
 "set ruler
 set laststatus=2
 set scrolloff=3
-set undofile
+"set undofile
 "set wrap
 set showtabline=2
 
