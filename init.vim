@@ -35,6 +35,7 @@ set scrolloff=3
 "set wrap
 set foldmethod=syntax
 set nofoldenable
+set visualbell
 
 set autoindent
 set expandtab
