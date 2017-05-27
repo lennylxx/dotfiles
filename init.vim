@@ -2,6 +2,7 @@ call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'Shougo/neoinclude.vim'
@@ -15,6 +16,11 @@ call plug#end()
 " shortcut
 map <C-K> :ClangFormat<cr>
 imap <C-K> :ClangFormat<cr>
+
+" reload init.vim changes immediately
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 " color theme
 " http://colorswat.ch/vim
