@@ -11,6 +11,11 @@ Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'rhysd/vim-clang-format'
+Plug 'majutsushi/tagbar'
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'tyrannicaltoucan/vim-deep-space'
 
@@ -23,6 +28,7 @@ let g:deoplete#sources#clang#clang_header='/usr/local/Cellar/llvm/4.0.0_1/lib/cl
 " shortcut
 map <C-K> :ClangFormat<cr>
 imap <C-K> :ClangFormat<cr>
+nmap <F8> :TagbarToggle<cr>
 
 " reload init.vim changes immediately
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
