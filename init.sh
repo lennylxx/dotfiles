@@ -1,5 +1,5 @@
 export EDITOR="nvim"
-export GOPATH=$(go env GOPATH)
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 function geoip {
     url="ipinfo.io/"$1

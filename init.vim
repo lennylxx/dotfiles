@@ -22,8 +22,16 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/4.0.0_1/lib/libclang.dylib'
-let g:deoplete#sources#clang#clang_header='/usr/local/Cellar/llvm/4.0.0_1/lib/clang'
+if has('unix')
+    let s:uname = system('uname -s')
+    if s:uname == 'Darwin'
+        let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/4.0.0_1/lib/libclang.dylib'
+        let g:deoplete#sources#clang#clang_header='/usr/local/Cellar/llvm/4.0.0_1/lib/clang'
+    else
+        let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-4.0/lib/libclang.so.1'
+        let g:deoplete#sources#clang#clang_header = '/usr/lib/llvm-4.0/include'
+    endif
+endif
 
 " shortcut
 map <C-K> :ClangFormat<cr>
