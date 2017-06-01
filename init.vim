@@ -1,6 +1,7 @@
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
@@ -23,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
