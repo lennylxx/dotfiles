@@ -84,5 +84,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 
+set ignorecase
+set smartcase
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 set list
