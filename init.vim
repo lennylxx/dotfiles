@@ -2,7 +2,12 @@ call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+" Plug 'weynhamz/vim-plugin-minibufexpl'
+" Plug 'bling/vim-bufferline'
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'airblade/vim-gitgutter'
 
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 " Plug 'Shougo/neoinclude.vim'
@@ -24,7 +29,7 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 if has('unix')
     let s:uname = system('uname -s')
-    if s:uname == 'Darwin'
+    if s:uname == "Darwin\n"
         let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/4.0.0_1/lib/libclang.dylib'
         let g:deoplete#sources#clang#clang_header='/usr/local/Cellar/llvm/4.0.0_1/lib/clang'
     else
@@ -37,6 +42,7 @@ endif
 map <C-K> :ClangFormat<cr>
 imap <C-K> :ClangFormat<cr>
 nmap <F8> :TagbarToggle<cr>
+nmap <C-P> :FZF<cr>
 
 " reload init.vim changes immediately
 " autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -49,6 +55,9 @@ set background=dark
 set termguicolors
 colorscheme deep-space
 let g:airline_theme='deep_space'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " editor
 set fenc=utf-8
