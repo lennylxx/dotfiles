@@ -10,12 +10,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
 
-Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+" Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 " Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-go', { 'do': 'make' }
+Plug 'rust-lang/rust.vim'
+Plug 'sebastianmarkow/deoplete-rust'
 Plug 'rhysd/vim-clang-format'
 Plug 'majutsushi/tagbar'
 
@@ -37,19 +39,11 @@ if has('unix')
     else
         let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-4.0/lib/libclang.so.1'
         let g:deoplete#sources#clang#clang_header = '/usr/lib/llvm-4.0/include'
+        let g:deoplete#sources#go#gocode_binary = $GOPATH.'bin/gocode'
+        let g:deoplete#sources#rust#racer_binary = '$HOME/.cargo/bin/racer'
+        let g:deoplete#sources#rust#racer_source_path = '$HOME/rust/src'
     endif
 endif
-
-" shortcut
-map <C-K> :ClangFormat<cr>
-imap <C-K> :ClangFormat<cr>
-nmap <F8> :TagbarToggle<cr>
-nmap <C-P> :FZF<cr>
-
-" reload init.vim changes immediately
-" autocmd BufWritePost $MYVIMRC source $MYVIMRC
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
 
 " color theme
 " http://colorswat.ch/vim
@@ -57,7 +51,7 @@ set background=dark
 set termguicolors
 colorscheme deep-space
 let g:airline_theme='deep_space'
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
@@ -75,7 +69,7 @@ set foldmethod=syntax
 set nofoldenable
 set visualbell
 set mouse=a " use mouse
-set clipboard=unnamedplus " access system clipboard
+"set clipboard=unnamedplus " access system clipboard
 filetype plugin on
 
 set autoindent
@@ -88,3 +82,14 @@ set ignorecase
 set smartcase
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 set list
+
+" shortcut
+map <C-K> :ClangFormat<cr>
+imap <C-K> :ClangFormat<cr>
+nmap <F8> :TagbarToggle<cr>
+nmap <C-P> :FZF<cr>
+
+" reload init.vim changes immediately
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+autocmd VimEnter * NERDTreeToggle
+autocmd VimEnter * wincmd p
