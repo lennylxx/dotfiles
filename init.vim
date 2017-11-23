@@ -26,6 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'sickill/vim-monokai'
 Plug 'flazz/vim-colorschemes'
 
 call plug#end()
@@ -48,8 +49,10 @@ endif
 " color theme
 " http://colorswat.ch/vim
 set background=dark
-set termguicolors
-colorscheme deep-space
+syntax enable
+"set termguicolors
+"colorscheme deep-space
+colorscheme monokai
 let g:airline_theme='deep_space'
 let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
