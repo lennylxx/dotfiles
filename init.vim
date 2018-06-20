@@ -1,23 +1,25 @@
+let g:python3_host_prog = 'C:\Program Files\Python36\python.exe'
+
 call plug#begin()
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
-" Plug 'weynhamz/vim-plugin-minibufexpl'
-" Plug 'bling/vim-bufferline'
+" Plug 'scrooloose/nerdtree'
+Plug 'weynhamz/vim-plugin-minibufexpl'
+Plug 'bling/vim-bufferline'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
 
 " Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 " Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang'
-Plug 'zchee/deoplete-jedi'
-Plug 'zchee/deoplete-go', { 'do': 'make' }
-Plug 'rust-lang/rust.vim'
-Plug 'sebastianmarkow/deoplete-rust'
+" Plug 'zchee/deoplete-clang'
+" Plug 'zchee/deoplete-jedi'
+" Plug 'zchee/deoplete-go', { 'do': 'make' }
+" Plug 'rust-lang/rust.vim'
+" Plug 'sebastianmarkow/deoplete-rust'
 Plug 'rhysd/vim-clang-format'
 Plug 'majutsushi/tagbar'
 
@@ -25,13 +27,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'sickill/vim-monokai'
-Plug 'flazz/vim-colorschemes'
+" Plug 'tyrannicaltoucan/vim-deep-space'
+" Plug 'sickill/vim-monokai'
+" Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 if has('unix')
     let s:uname = system('uname -s')
     if s:uname == "Darwin\n"
@@ -48,30 +50,32 @@ endif
 
 " color theme
 " http://colorswat.ch/vim
-set background=dark
+" set background=dark
+" set bg=dark
 syntax enable
-"set termguicolors
-"colorscheme deep-space
-colorscheme monokai
-let g:airline_theme='deep_space'
+
+set termguicolors
+" colorscheme deep-space
+" colorscheme monokai
+" let g:airline_theme='deep_space'
 let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " editor
 set fenc=utf-8
 set number " line number
 set ruler
-set cursorline " highlight current line
+"set cursorline " highlight current line
 set colorcolumn=80 " display guideline
 set laststatus=2
 set scrolloff=3
 "set undofile
-"set wrap
+set wrap
 set foldmethod=syntax
 set nofoldenable
-set visualbell
-set mouse=a " use mouse
+" set visualbell
+ set mouse=a " use mouse
 "set clipboard=unnamedplus " access system clipboard
 filetype plugin on
 
@@ -93,6 +97,6 @@ nmap <F8> :TagbarToggle<cr>
 nmap <C-P> :FZF<cr>
 
 " reload init.vim changes immediately
-" autocmd BufWritePost $MYVIMRC source $MYVIMRC
-autocmd VimEnter * NERDTreeToggle
-autocmd VimEnter * wincmd p
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"autocmd VimEnter * NERDTreeToggle
+"autocmd VimEnter * wincmd p
