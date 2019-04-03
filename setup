@@ -6,5 +6,25 @@ do
 done
 
 # vim
-ln -s -i $PWD/vim/colors ~/.vim/colors
+#ln -s -i $PWD/vim/colors ~/.vim/colors
+
+# packages
+sudo apt install python3-pip tmux neovim
+
+# nvim vim-plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p ~/.config/nvim
+ln -sfn $PWD/init.vim ~/.config/nvim/init.vim
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# init.sh
+echo "[ -f ${PWD}/init.sh ] && source ${PWD}/init.sh" >> ~/.zshrc
+
+# fzf
+#git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+#~/.fzf/install
+echo "[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh" >> ~/.zshrc
 
